@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer components {
+  .half-border-left:hover {
+    @apply relative bg-white p-4 rounded-md shadow-lg text-blue-600 overflow-hidden;
+  }
+
+  .half-border-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.5), transparent);
+    @apply rounded-l-md;
+  }
+} */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Avo;
+  src: url('./assets/fonts/AVo/UTM\ Avo.ttf');
+}
+
+@font-face {
+  font-family: Opensanslight;
+  src: url('./assets/fonts/Open_Sans/static/OpenSans-Light.ttf');
+}
+
+.bs-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,10 +62,49 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: white;
+}
+
+.container {
+  width: 1170px;
+
+}
+
+
+
+
+/* Home */
+
+.icon_phone_header {
+  color: #1c9710;
+}
+
+.icon_search {
+  color: #1c9710;
+}
+
+.icon_drop {
+  color: black;
+  font-size: 10px;
+}
+
+/* Contact */
+.base__img {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.hover__img {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.img-local:hover .base__img {
+  display: none;
+}
+
+.img-local:hover .hover__img {
+  display: block;
 }

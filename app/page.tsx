@@ -1,113 +1,322 @@
-import Image from 'next/image'
+"use client";
+import { useState } from "react";
+import Header from "./components/Header/index";
+import Footer from "./components/Footer/index";
+import Image from "next/image";
+import AboutUsImage from "./assets/images/about_img.gif";
+import ServiceIMG from "./assets/images/serviceIMG.jpg";
+import tuyendung from "./assets/images/tuyendung.jpg";
+import branch_item1 from "./assets/images/branch-item1.jpg";
+import branch_item2 from "./assets/images/branch-item2.jpg";
+import branch_item3 from "./assets/images/branch-item3.jpg";
+import { Suspense } from "react";
+import NewHome from "./components/NewHome/index";
+import Projects from "./components/Projects/index";
 
-export default function Home() {
+import styled from "styled-components";
+const StyledDiv = styled.div.attrs({
+  content: "relative bg-white p-4 rounded-md shadow-lg text-blue-800",
+})`
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    border: 2px solid #2b6cb0;
+    border-left: none;
+    border-bottom-right-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    opacity: 0.5;
+  }
+`;
+const HomeStyled = styled.div`
+  .home {
+    background-image: url(${"http://acefic5.vn/storage/banners/banner-imggif.png"});
+    background-repeat: no-repeat;
+    background-size: 62%;
+    background-position: top right;
+    height: 2000px;
+    .btn_see_more::before,
+    .btn_see_more::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 10px;
+    }
+
+    .btn_see_more::before {
+      top: -9%;
+      left: -5%;
+      border-left: 2px solid #32f532;
+      border-top: 2px solid #32f532;
+    }
+    .btn_see_more::after {
+      bottom: -9%;
+      right: -5%;
+      border-right: 2px solid #32f532;
+      border-bottom: 2px solid #32f532;
+    }
+    .breaking_el::after {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 6px;
+      top: 30%;
+      left: 100%;
+      margin-left: 10px;
+      background-color: #808080;
+    }
+    .partner {
+      /* background-image: url("./assets/images/bg_partner.png"); */
+      background: white;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+`;
+export default function index() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <HomeStyled>
+      <div className="home flex flex-col gap-10">
+        <Header />
+        <div className="container mt-48 ">
+          <h1 className="text-blue-900  font-bold-100 text-5xl uppercase font-sans">
+            From concept to<br></br> creation.
+          </h1>
+          <br></br>
+          <p className="text-blue-900">
+            It is a long established fact that a reader will be distracted by
+            the
+            <br></br> readable content.
+          </p>
+          <br></br>
+          <button className="bg-green-500 p-2 w-35 text-base btn_see_more relative">
+            Xem thêm
+          </button>
         </div>
+        <div className="container flex mt-96 gap-10 text-3xl">
+          <Image src={AboutUsImage} alt="about-us" />
+          <div className="">
+            <h1 className="text-blue-900 uppercase font-bold mt-5">
+              Về chúng tôi
+            </h1>
+            <div className="w-5 h-5 bg-lime-400 mt-4 relative  breaking_el"></div>
+            <p className="pt-11 leading-6 text-blue-900 italic mb-34 text-base w-96">
+              Scarcely on striking packages by so property in delicate. Up or
+              well must less rent read walk so be. Easy sold at do hour sing
+              spot. Any meant has cease too the decay. Since party burst am it
+              match. By or blushes between besides offices noisier as. Sending
+              do brought winding compass in. Paid day till shed only fact age
+              its end.
+            </p>
+            <button className="bg-green-400 p-2 text-sm btn_see_more relative">
+              Xem thêm
+            </button>
+          </div>
+        </div>
+        <div className="container">
+          <h1 className="uppercase text-blue-900 text-4xl font-sans font-bold">
+            Lĩnh vực hoạt động
+          </h1>
+          <div className="w-5 h-5 bg-lime-400 mt-4 relative  breaking_el"></div>
+          <div className="flex justify-between gap-10 items-center">
+            <div className="md-45-15 mt-32">
+              <div className="text pl-11 pt-1">
+                <div className="mb-7">
+                  <div className="head">
+                    <p className="title font-sans uppercase text-blue-900 relative ml-3 z-10 text-xl font-bold">
+                      <span className="number -top-10 -left-11 absolute z-0 text-extrabold text-gray-400 text-6xl">
+                        01
+                      </span>
+                      THIẾT KẾ KIẾN TRÚC{" "}
+                    </p>
+                  </div>
+
+                  <div className="content px-2.5 py-2.4 text-xs leading-5 z-10  bg-white p-4  rounded-md half-border-left">
+                    <p className="desc mb-1 text-blue-800">
+                      {" "}
+                      Scare on striking packages by so property in delicate.Up
+                      or well<br></br>must less rent read walk so be.Easy sold
+                      at do hour sing spot.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="text pl-11 pt-9">
+                <div className="mb-7">
+                  <div className="head">
+                    <p className="title font-sans uppercase text-blue-900 relative ml-3 z-10 text-xl  font-bold">
+                      <span className="number -top-10 -left-11 absolute z-0 text-extrabold text-gray-400 text-6xl">
+                        02
+                      </span>
+                      THIẾT KẾ KIẾN TRÚC{" "}
+                    </p>
+                  </div>
+                  <div className="content px-2.5 py-2.4 text-xs leading-5 z-10  bg-white p-4  rounded-md half-border-left">
+                    <p className="desc mb-1 text-blue-800">
+                      Scare on striking packages by so property in delicate.Up
+                      or well<br></br>must less rent read walk so be.Easy sold
+                      at do hour sing spot.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="text pl-11 pt-9">
+                <div className="mb-7">
+                  <div className="head">
+                    <p className="title font-sans uppercase text-blue-900 relative ml-3 z-10 text-xl  font-bold">
+                      <span className="number -top-10 -left-11 absolute z-0 text-extrabold text-gray-400 text-6xl">
+                        03
+                      </span>
+                      THIẾT KẾ KIẾN TRÚC{" "}
+                    </p>
+                  </div>
+                  <div className="content px-2.5 py-2.4 text-xs leading-5 z-10  bg-white p-4  rounded-md half-border-left">
+                    <p className="desc mb-1 text-blue-800">
+                      {" "}
+                      Scare on striking packages by so property in delicate.Up
+                      or well<br></br>must less rent read walk so be.Easy sold
+                      at do hour sing spot.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="text pl-11 pt-9">
+                <div className="mb-7">
+                  <div className="head">
+                    <p className="title font-sans uppercase text-blue-900 relative ml-3 z-10 text-xl  font-bold">
+                      <span className="number -top-10 -left-11 absolute z-0 text-extrabold text-gray-400 text-6xl">
+                        04
+                      </span>
+                      THIẾT KẾ KIẾN TRÚC{" "}
+                    </p>
+                  </div>
+                  <div className="relative bg-white p-4 rounded-md shadow-lg text-blue-800">
+                    <div className="content px-2.5 py-2.4 text-xs leading-5 z-10  bg-white p-4  rounded-md half-border-left">
+                      <p className="desc mb-1 text-blue-800">
+                        {" "}
+                        Scare on striking packages by so property in delicate.Up
+                        or well<br></br>must less rent read walk so be.Easy sold
+                        at do hour sing spot.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="text pl-11 pt-9">
+                <div className="mb-7">
+                  <div className="head">
+                    <p className="title font-sans uppercase text-blue-900 relative ml-3 z-10 text-xl  font-bold">
+                      <span className="number -top-10 -left-11 absolute z-0 text-extrabold text-gray-400 text-6xl">
+                        05
+                      </span>
+                      THIẾT KẾ KIẾN TRÚC{" "}
+                    </p>
+                  </div>
+                  <div className="content px-2.5 py-2.4 text-xs leading-5 z-10  bg-white p-4  rounded-md half-border-left">
+                    <p className="desc mb-1 text-blue-800">
+                      {" "}
+                      Scare on striking packages by so property in delicate.Up
+                      or well<br></br>must less rent read walk so be.Easy sold
+                      at do hour sing spot.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Image src={ServiceIMG} alt="service_img" />
+          </div>
+        </div>
+        <Suspense>
+          <Projects></Projects>
+        </Suspense>
+        <div className="container flex gap-12 ">
+          <Image src={tuyendung} alt="tuyen_dung" />
+          <div className="font-sans  text-blue-900 ">
+            <h1 className="uppercase font-bold text-5xl mt-8 ">Tuyển dụng</h1>
+            <p className="pt-9 text-sm leading-6 mb-6">
+              Resources exquisite set arranging moonlight sem him household
+              <br></br> had. Months had too ham cousin remove far spirit. She
+              procuring the<br></br> why performed continual improving.
+            </p>
+            <button className="rounded-2xl uppercase bg-green-400 p-3 text-white">
+              Nộp đơn
+            </button>
+          </div>
+        </div>
+
+        <div className="pt-36  container  ">
+          <div className="module-header">
+            <p className="title  font-sans text-5xl uppercase mb-6 text-blue-900 text-center">
+              Tin Mới Nhất
+            </p>
+            <span className="style " />
+          </div>
+          <div className="flex container gap-5">
+            <Suspense>
+              <NewHome></NewHome>
+            </Suspense>
+          </div>
+          <p className="style__section"> News </p>
+          <div className="h-10 w-16 rounded-lg">
+            <a href="#" className=" ">
+              View more <span className="p-10" />
+            </a>
+          </div>
+          {/* <div className="map">
+            <canvas
+              id="map"
+              width={1140}
+              height={711}
+              style={{ width: 1140, height: "711.656px" }}
+            />
+          </div> */}
+        </div>
+        <div className="container -mb-32 z-10 rounded-md partner mt-48">
+          <div className="m-auto rounded-lg z-10 shadow-xl">
+            <div className="pt-8 text-center head">
+              <p className="uppercase font-sans text-xl text-extrabold text-gray-500">
+                ĐỐI TÁC KHÁCH HÀNG
+              </p>
+            </div>
+            <div className="content text-center pt-5 over overflow-hidden">
+              <div className="branch-slide">
+                <div className="item  flex justify-around ">
+                  <div className="branch-item bg-white shadow-xl relative top-0 mb-10 p-4 text-center">
+                    <a
+                      href="https://vingroup.net/"
+                      className="link w-full h-full block left-0 top-0 z-10 "
+                    >
+                      <Image src={branch_item1} alt="Vingroup" className="" />
+                    </a>
+                  </div>
+                  <div className="branch-item bg-white shadow-xl relative top-0 mb-10 p-4 text-center">
+                    <a
+                      href="https://vingroup.net/"
+                      className="link w-full h-full block left-0 top-0 z-10 "
+                    >
+                      <Image src={branch_item2} alt="Vingroup" className="" />
+                    </a>
+                  </div>
+                  <div className="branch-item bg-white shadow-xl relative top-0 mb-10 p-4 text-center">
+                    <a
+                      href="https://vingroup.net/"
+                      className="link w-full h-full block left-0 top-0 z-10 "
+                    >
+                      <Image src={branch_item3} alt="Vingroup" className="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container"></div>
+        <Footer />
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </HomeStyled>
+  );
 }

@@ -1,0 +1,75 @@
+{
+    "news": [
+      {
+        "id": 1,
+        "title": "Lorem ipsum dolor sit amet aenean nisi sociis ipsum...",
+        "url": "http://acefic5.vn/storage/projects/20200219044240-540x360.png",
+        "time": {
+          "day": "25",
+          "month": "december"
+        },
+        "view": "328",
+        "content": "Far concluded not his something extremity.Want four we face an he gate."
+      },
+      {
+        "id": 2,
+        "title": "Lorem ipsum dolor sit amet aenean nisi sociis ipsum...",
+        "url": "http://acefic5.vn/storage/projects/20200219044240-540x360.png",
+        "alt":"Test",
+        "time": {
+          "day": "25",
+          "month": "december"
+        },
+        "view": "328",
+        "content": "Far concluded not his something extremity.Want four we face an he gate."
+      },
+      {
+        "id": 3,
+        "title": "Lorem ipsum dolor sit amet aenean nisi sociis ipsum...",
+        "url": "http://acefic5.vn/storage/projects/20200219044240-540x360.png",
+        "alt":"Test",
+        "time": {
+          "day": "25",
+          "month": "december"
+        },
+        "view": "328",
+        "content": "Far concluded not his something extremity.Want four we face an he gate."
+      }
+     
+    ],
+    "projects":[
+      {
+        "id":1,
+        "url":"http://acefic5.vn/storage/projects/cong-trinh-trieu-tien-1-mjbx.jpg",
+        "title":"Test Tiếng Anh"
+      },
+      {
+        "id":2,
+        "url":"http://acefic5.vn/storage/projects/cong-trinh-trieu-tien-1-mjbx.jpg",
+        "title":"Test Tiếng Anh"
+      },
+      {
+        "id":3,
+        "url":"http://acefic5.vn/storage/projects/cong-trinh-trieu-tien-1-mjbx.jpg",
+        "title":"Test Tiếng Anh"
+      }, {
+        "id":4,
+        "url":"http://acefic5.vn/storage/projects/cong-trinh-trieu-tien-1-mjbx.jpg",
+        "title":"Test Tiếng Anh"
+      }, {
+        "id":5,
+        "url":"http://acefic5.vn/storage/projects/cong-trinh-trieu-tien-1-mjbx.jpg",
+        "title":"Test Tiếng Anh"
+      }, {
+        "id":6,
+        "url":"http://acefic5.vn/storage/projects/cong-trinh-trieu-tien-1-mjbx.jpg",
+        "title":"Test Tiếng Anh"
+      }
+    ]
+  }
+  
+   
+
+ 
+  
+  
